@@ -1,0 +1,2 @@
+# androinfo
+A shell script that prints information from Android devices, such as fingerprint, brand, SDK, and others. 
