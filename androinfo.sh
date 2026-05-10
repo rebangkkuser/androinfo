@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/system/bin/sh
 
 # androinfo - Android system information tool
 # Copyright (c) 2026 bangkkuser
