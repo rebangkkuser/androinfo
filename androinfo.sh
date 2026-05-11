@@ -23,11 +23,16 @@ echo " "
 KERNEL=$(uname -r)
 ARCH=$(uname -m)
 SDK=$(getprop ro.build.version.sdk)
+FIRSTSDK=$(getprop ro.product.first_api_level)
 DEVICE=$(getprop ro.product.device)
 FINGERPRINT=$(getprop ro.build.fingerprint)
 BRAND=$(getprop ro.product.manufacturer)
-VERSION="1.0 (versionCode 100)"
+VERSION="0.1.0 (versionCode 010)"
 SHELL="/system/bin/sh"
+BUILDID=$(getprop ro.product.build.id)
+BUILDTYPE=$(getprop ro.product.build.type)
+BUILDTAGS=$(getprop ro.product.build.tags)
+ANDROIDV=$(getprop ro.product.build.version.release)
 ASCIIDIR=.androinfo
 ASCII=.androinfo/ascii.txt
 
@@ -36,13 +41,18 @@ touch "$ASCII" 1>/dev/null
 
 cat "$ASCII"
 
-echo "Device:$DEVICE"
-echo "SDK:$SDK"
-echo "androinfo version:$VERSION"
-echo "Device brand:$BRAND"
-echo "Device kernel:$KERNEL"
-echo "Device architecture:$ARCH"
-echo "Running shell:$SHELL"
-echo "Device fingerprint:$FINGERPRINT"
+echo "Device: $DEVICE"
+echo "Android version: $ANDROIDV"
+echo "SDK: $SDK"
+echo "First SDK: $FIRSTSDK"
+echo "androinfo version: $VERSION"
+echo "Device brand: $BRAND"
+echo "Device kernel: $KERNEL"
+echo "Device architecture: $ARCH"
+echo "Running shell: $SHELL"
+echo "Device fingerprint: $FINGERPRINT"
+echo "Build ID: $BUILDID"
+echo "Build type: $BUILDTYPE"
+echo "Build tags: $BUILDTAGS"
 
 exit 0
